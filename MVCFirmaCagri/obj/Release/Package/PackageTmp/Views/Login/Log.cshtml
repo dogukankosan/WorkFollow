@@ -1,0 +1,102 @@
+﻿@model MVCFirmaCagri.Models.Entitiy.Company
+@{
+    Layout = null;
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        ::selection {
+            background: orangered;
+            color: #FFF;
+        }
+    </style>
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Thema/login-form-08/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="~/Thema/login-form-08/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Thema/login-form-08/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Thema/login-form-08/css/style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>GİRİŞ EKRANI</title>
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 order-md-2">
+                    <img src="~/Thema/login-form-08/images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">
+                </div>
+                <div class="col-md-6 contents">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="mb-4">
+                                <h3>İş Takip <strong>Cari Paneli</strong></h3>
+                                <p class="mb-4">Çağrı Oluşturmak,Çağrılarınızı Takip Etmek Ve Diğer İşlemler İçin Lütfen Oturum Açın.</p>
+                            </div>
+                            <form action="Log" method="post">
+                                <div class="form-group first">
+                                    <label for="CompanyMail">Kullanıcı Adı</label>
+                                    <input type="text" required="" maxlength="70" name="CompanyMail" class="form-control" id="CompanyMail">
+                                    @Html.ValidationMessageFor(x => x.CompanyMail, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group last mb-4">
+                                    <label for="Password">Şifre</label>
+                                    <input type="password" required="" maxlength="25" name="Password" class="form-control" id="Password">
+                                    @Html.ValidationMessageFor(x => x.Password, "", new { @class = "text-danger" })
+                                </div>
+                                <div style="margin-left: 30px" class="g-recaptcha" data-sitekey="6LfrU-sfAAAAAPhSZixLk1-GaOz_3_ZyEPlXPeNg"></div>   <br />
+                                <div class="d-flex mb-5 align-items-center">
+                                    <br />
+                                    <span class="ml-auto" type="button" style="margin-left: 250px" data-toggle="modal" data-target="#modal1"><a class="forgot-pass">Şifremi Unuttum</a></span>
+                                </div>
+                                <input type="submit" value="Giriş Yap" class="btn text-white btn-block btn-primary">
+                            </form>
+                            @Html.Action("RememberPassword", "Login")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (ViewBag.dgr == "error")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                swal("Hatalı!", "Giriş İşlemi Hatalı Lütfen Tekrar Giriş Yapınız !!", "error");
+            };
+        </script>
+    }
+    @if (ViewBag.cap == "cap")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                swal("Hatalı!", "Doğrulama İşlemini Atlamayın Lütfen Doğrulama İşlemini Tamamlayın !!", "error");
+            };
+        </script>
+    }
+    @if (ViewBag.mailsuccses == "mailsuccses")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                swal("Başarılı!", "Girmiş Olduğunuz Mail Adresine Şifreniz Gönderilmiştir  !!", "success");
+            };
+        </script>
+    }
+    @if (ViewBag.mailerror == "mailerror")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                swal("Hatalı!", "Girdiniz Mail Adresi Sistemde Bulunamamıştır !!", "error");
+            };
+        </script>
+    }
+    <script src="~/Thema/login-form-08/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Thema/login-form-08/js/popper.min.js"></script>
+    <script src="~/Thema/login-form-08/js/bootstrap.min.js"></script>
+    <script src="~/Thema/login-form-08/js/main.js"></script>
+</body>
+</html>

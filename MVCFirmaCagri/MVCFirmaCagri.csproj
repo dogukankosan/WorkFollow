@@ -1,0 +1,1014 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A4664380-C5B5-4C14-8FB1-5A499A936C47}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVCFirmaCagri</RootNamespace>
+    <AssemblyName>MVCFirmaCagri</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44331</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.10.4.0\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CAPTCHA\Capt.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Encription\Enc.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ImageBinary\BinaryImage.cs" />
+    <Compile Include="Models\Classes\ActivePassive.cs" />
+    <Compile Include="Models\Classes\Trash.cs" />
+    <Compile Include="Models\Entitiy\CallDetails.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entitiy\Company.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entitiy\CompanyCall.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entitiy\Department.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entitiy\Ilceler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entitiy\Iller.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entitiy\Message.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entitiy\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entitiy\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entitiy\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entitiy\Personeles.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entitiy\sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entitiy\TaskDetails.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entitiy\Taskes.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\CompanyCall.cs" />
+    <Compile Include="Validation\CompanyMail.cs" />
+    <Compile Include="Validation\CompanyValidate.cs" />
+    <Compile Include="Validation\LoginValidate.cs" />
+    <Compile Include="Validation\Message.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.min.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.min.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.dataTables.css" />
+    <Content Include="Content\DataTables\css\rowGroup.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.foundation.css" />
+    <Content Include="Content\DataTables\css\rowGroup.foundation.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.jqueryui.css" />
+    <Content Include="Content\DataTables\css\rowGroup.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.semanticui.css" />
+    <Content Include="Content\DataTables\css\rowGroup.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.min.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\select.foundation.css" />
+    <Content Include="Content\DataTables\css\select.foundation.min.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.min.css" />
+    <Content Include="Content\DataTables\images\details_close.png" />
+    <Content Include="Content\DataTables\images\details_open.png" />
+    <Content Include="Content\DataTables\images\sort_asc.png" />
+    <Content Include="Content\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables\images\sort_both.png" />
+    <Content Include="Content\DataTables\images\sort_desc.png" />
+    <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Entitiy\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Entitiy\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\DataTables\css\semanticui.scss" />
+    <Content Include="Content\DataTables\css\mixins.scss" />
+    <Content Include="Content\DataTables\css\common.scss" />
+    <EntityDeploy Include="Models\Entitiy\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Entitiy\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.min.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.min.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.min.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.min.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.print.js" />
+    <Content Include="Scripts\DataTables\buttons.print.min.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowGroup.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowGroup.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.min.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.min.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Thema\login-form-08\css\bootstrap.min.css" />
+    <Content Include="Thema\login-form-08\css\bootstrap\bootstrap-grid.css" />
+    <Content Include="Thema\login-form-08\css\bootstrap\bootstrap-reboot.css" />
+    <Content Include="Thema\login-form-08\css\owl.carousel.min.css" />
+    <Content Include="Thema\login-form-08\css\style.css" />
+    <Content Include="Thema\login-form-08\fonts\icomoon\demo-files\demo.css" />
+    <Content Include="Thema\login-form-08\fonts\icomoon\demo-files\demo.js" />
+    <Content Include="Thema\login-form-08\fonts\icomoon\demo.html" />
+    <Content Include="Thema\login-form-08\fonts\icomoon\fonts\icomoon.svg" />
+    <Content Include="Thema\login-form-08\fonts\icomoon\Read Me.txt" />
+    <Content Include="Thema\login-form-08\fonts\icomoon\style.css" />
+    <Content Include="Thema\login-form-08\images\bg_1.jpg" />
+    <Content Include="Thema\login-form-08\images\undraw_file_sync_ot38.svg" />
+    <Content Include="Thema\login-form-08\js\bootstrap.min.js" />
+    <Content Include="Thema\login-form-08\js\jquery-3.3.1.min.js" />
+    <Content Include="Thema\login-form-08\js\main.js" />
+    <Content Include="Thema\login-form-08\js\owl.carousel.min.js" />
+    <Content Include="Thema\login-form-08\js\popper.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-ar-AR.js" />
+    <Content Include="Thema\summernote\lang\summernote-ar-AR.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-ar-AR.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-az-AZ.js" />
+    <Content Include="Thema\summernote\lang\summernote-az-AZ.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-az-AZ.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-bg-BG.js" />
+    <Content Include="Thema\summernote\lang\summernote-bg-BG.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-bg-BG.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-ca-ES.js" />
+    <Content Include="Thema\summernote\lang\summernote-ca-ES.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-ca-ES.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-cs-CZ.js" />
+    <Content Include="Thema\summernote\lang\summernote-cs-CZ.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-cs-CZ.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-da-DK.js" />
+    <Content Include="Thema\summernote\lang\summernote-da-DK.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-da-DK.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-de-DE.js" />
+    <Content Include="Thema\summernote\lang\summernote-de-DE.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-de-DE.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-el-GR.js" />
+    <Content Include="Thema\summernote\lang\summernote-el-GR.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-el-GR.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-es-ES.js" />
+    <Content Include="Thema\summernote\lang\summernote-es-ES.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-es-ES.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-es-EU.js" />
+    <Content Include="Thema\summernote\lang\summernote-es-EU.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-es-EU.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-fa-IR.js" />
+    <Content Include="Thema\summernote\lang\summernote-fa-IR.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-fa-IR.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-fi-FI.js" />
+    <Content Include="Thema\summernote\lang\summernote-fi-FI.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-fi-FI.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-fr-FR.js" />
+    <Content Include="Thema\summernote\lang\summernote-fr-FR.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-fr-FR.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-gl-ES.js" />
+    <Content Include="Thema\summernote\lang\summernote-gl-ES.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-gl-ES.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-he-IL.js" />
+    <Content Include="Thema\summernote\lang\summernote-he-IL.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-he-IL.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-hr-HR.js" />
+    <Content Include="Thema\summernote\lang\summernote-hr-HR.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-hr-HR.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-hu-HU.js" />
+    <Content Include="Thema\summernote\lang\summernote-hu-HU.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-hu-HU.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-id-ID.js" />
+    <Content Include="Thema\summernote\lang\summernote-id-ID.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-id-ID.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-it-IT.js" />
+    <Content Include="Thema\summernote\lang\summernote-it-IT.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-it-IT.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-ja-JP.js" />
+    <Content Include="Thema\summernote\lang\summernote-ja-JP.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-ja-JP.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-ko-KR.js" />
+    <Content Include="Thema\summernote\lang\summernote-ko-KR.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-ko-KR.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-lt-LT.js" />
+    <Content Include="Thema\summernote\lang\summernote-lt-LT.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-lt-LT.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-lt-LV.js" />
+    <Content Include="Thema\summernote\lang\summernote-lt-LV.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-lt-LV.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-mn-MN.js" />
+    <Content Include="Thema\summernote\lang\summernote-mn-MN.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-mn-MN.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-nb-NO.js" />
+    <Content Include="Thema\summernote\lang\summernote-nb-NO.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-nb-NO.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-nl-NL.js" />
+    <Content Include="Thema\summernote\lang\summernote-nl-NL.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-nl-NL.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-pl-PL.js" />
+    <Content Include="Thema\summernote\lang\summernote-pl-PL.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-pl-PL.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-pt-BR.js" />
+    <Content Include="Thema\summernote\lang\summernote-pt-BR.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-pt-BR.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-pt-PT.js" />
+    <Content Include="Thema\summernote\lang\summernote-pt-PT.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-pt-PT.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-ro-RO.js" />
+    <Content Include="Thema\summernote\lang\summernote-ro-RO.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-ro-RO.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-ru-RU.js" />
+    <Content Include="Thema\summernote\lang\summernote-ru-RU.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-ru-RU.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-sk-SK.js" />
+    <Content Include="Thema\summernote\lang\summernote-sk-SK.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-sk-SK.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-sl-SI.js" />
+    <Content Include="Thema\summernote\lang\summernote-sl-SI.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-sl-SI.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-sr-RS-Latin.js" />
+    <Content Include="Thema\summernote\lang\summernote-sr-RS-Latin.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-sr-RS-Latin.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-sr-RS.js" />
+    <Content Include="Thema\summernote\lang\summernote-sr-RS.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-sr-RS.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-sv-SE.js" />
+    <Content Include="Thema\summernote\lang\summernote-sv-SE.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-sv-SE.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-ta-IN.js" />
+    <Content Include="Thema\summernote\lang\summernote-ta-IN.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-ta-IN.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-th-TH.js" />
+    <Content Include="Thema\summernote\lang\summernote-th-TH.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-th-TH.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-tr-TR.js" />
+    <Content Include="Thema\summernote\lang\summernote-tr-TR.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-tr-TR.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-uk-UA.js" />
+    <Content Include="Thema\summernote\lang\summernote-uk-UA.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-uk-UA.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-uz-UZ.js" />
+    <Content Include="Thema\summernote\lang\summernote-uz-UZ.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-uz-UZ.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-vi-VN.js" />
+    <Content Include="Thema\summernote\lang\summernote-vi-VN.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-vi-VN.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-zh-CN.js" />
+    <Content Include="Thema\summernote\lang\summernote-zh-CN.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-zh-CN.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\lang\summernote-zh-TW.js" />
+    <Content Include="Thema\summernote\lang\summernote-zh-TW.min.js" />
+    <Content Include="Thema\summernote\lang\summernote-zh-TW.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\plugin\databasic\summernote-ext-databasic.css" />
+    <Content Include="Thema\summernote\plugin\databasic\summernote-ext-databasic.js" />
+    <Content Include="Thema\summernote\plugin\hello\summernote-ext-hello.js" />
+    <Content Include="Thema\summernote\plugin\specialchars\summernote-ext-specialchars.js" />
+    <Content Include="Thema\summernote\summernote-bs4.css" />
+    <Content Include="Thema\summernote\summernote-bs4.js" />
+    <Content Include="Thema\summernote\summernote-bs4.min.css" />
+    <Content Include="Thema\summernote\summernote-bs4.min.js" />
+    <Content Include="Thema\summernote\summernote-bs4.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\summernote-lite.css" />
+    <Content Include="Thema\summernote\summernote-lite.js" />
+    <Content Include="Thema\summernote\summernote-lite.min.css" />
+    <Content Include="Thema\summernote\summernote-lite.min.js" />
+    <Content Include="Thema\summernote\summernote-lite.min.js.LICENSE.txt" />
+    <Content Include="Thema\summernote\summernote.css" />
+    <Content Include="Thema\summernote\summernote.js" />
+    <Content Include="Thema\summernote\summernote.min.css" />
+    <Content Include="Thema\summernote\summernote.min.js" />
+    <Content Include="Thema\summernote\summernote.min.js.LICENSE.txt" />
+    <Content Include="Thema\web1\css\style.css" />
+    <Content Include="Thema\web1\images\bg.png" />
+    <Content Include="Thema\web1\images\bg1.png" />
+    <Content Include="Thema\web1\images\error-img.png" />
+    <Content Include="Thema\web2\starter\assets\css\style-starter.css" />
+    <Content Include="Thema\web2\starter\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Thema\web2\starter\assets\images\avatar1.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\avatar2.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\avatar3.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\avatar4.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\avatar5.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\avatar6.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\avatar7.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\cart.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\content.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\dashboard.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\desk.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\down.png" />
+    <Content Include="Thema\web2\starter\assets\images\logo.png" />
+    <Content Include="Thema\web2\starter\assets\images\people1.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\people2.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\people3.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\people4.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\Preloader_11.gif" />
+    <Content Include="Thema\web2\starter\assets\images\profileimg-big.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\profileimg.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\sort_asc.png" />
+    <Content Include="Thema\web2\starter\assets\images\sort_both.png" />
+    <Content Include="Thema\web2\starter\assets\images\sort_desc.png" />
+    <Content Include="Thema\web2\starter\assets\images\team.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\team2.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\team3.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\team4.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\template1.jpg" />
+    <Content Include="Thema\web2\starter\assets\images\template2.jpg" />
+    <Content Include="Thema\web2\starter\assets\js\bar.js" />
+    <Content Include="Thema\web2\starter\assets\js\bootstrap.min.js" />
+    <Content Include="Thema\web2\starter\assets\js\Chart.min.js" />
+    <Content Include="Thema\web2\starter\assets\js\jquery-1.10.2.min.js" />
+    <Content Include="Thema\web2\starter\assets\js\jquery-3.3.1.min.js" />
+    <Content Include="Thema\web2\starter\assets\js\jquery.nicescroll.js" />
+    <Content Include="Thema\web2\starter\assets\js\linechart.js" />
+    <Content Include="Thema\web2\starter\assets\js\modernizr.js" />
+    <Content Include="Thema\web2\starter\assets\js\scripts.js" />
+    <Content Include="Thema\web2\starter\assets\js\utils.js" />
+    <Content Include="Thema\web\css\atlas.css" />
+    <Content Include="Thema\web\css\bootstrap.min.css" />
+    <Content Include="Thema\web\css\clndr.css" />
+    <Content Include="Thema\web\css\fabochart.css" />
+    <Content Include="Thema\web\css\flexslider.css" />
+    <Content Include="Thema\web\css\font-awesome.css" />
+    <Content Include="Thema\web\css\graph.css" />
+    <Content Include="Thema\web\css\icon-font.min.css" />
+    <Content Include="Thema\web\css\owl.carousel.css" />
+    <Content Include="Thema\web\css\style.css" />
+    <Content Include="Thema\web\fonts\fontawesome-webfont.svg" />
+    <Content Include="Thema\web\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Thema\web\images\11.jpg" />
+    <Content Include="Thema\web\images\8.jpg" />
+    <Content Include="Thema\web\images\b1.jpg" />
+    <Content Include="Thema\web\images\b2.jpg" />
+    <Content Include="Thema\web\images\b3.jpg" />
+    <Content Include="Thema\web\images\b4.jpg" />
+    <Content Include="Thema\web\images\b5.jpg" />
+    <Content Include="Thema\web\images\b6.jpg" />
+    <Content Include="Thema\web\images\b7.jpg" />
+    <Content Include="Thema\web\images\b8.jpg" />
+    <Content Include="Thema\web\images\b9.jpg" />
+    <Content Include="Thema\web\images\bag.png" />
+    <Content Include="Thema\web\images\closew.gif" />
+    <Content Include="Thema\web\images\close_1.png" />
+    <Content Include="Thema\web\images\cross.png" />
+    <Content Include="Thema\web\images\d1.jpg" />
+    <Content Include="Thema\web\images\d2.jpg" />
+    <Content Include="Thema\web\images\d3.jpg" />
+    <Content Include="Thema\web\images\d4.jpg" />
+    <Content Include="Thema\web\images\g1.jpg" />
+    <Content Include="Thema\web\images\g2.jpg" />
+    <Content Include="Thema\web\images\g3.jpg" />
+    <Content Include="Thema\web\images\g4.jpg" />
+    <Content Include="Thema\web\images\g5.jpg" />
+    <Content Include="Thema\web\images\g6.jpg" />
+    <Content Include="Thema\web\images\grid.png" />
+    <Content Include="Thema\web\images\icons.png" />
+    <Content Include="Thema\web\images\icon_sprite.png" />
+    <Content Include="Thema\web\images\img-sprite.png" />
+    <Content Include="Thema\web\images\leftw.gif" />
+    <Content Include="Thema\web\images\logo.png" />
+    <Content Include="Thema\web\images\na.jpg" />
+    <Content Include="Thema\web\images\na1.jpg" />
+    <Content Include="Thema\web\images\na2.jpg" />
+    <Content Include="Thema\web\images\phon.png" />
+    <Content Include="Thema\web\images\rightw.gif" />
+    <Content Include="Thema\web\images\right_arrow.png" />
+    <Content Include="Thema\web\images\s1.jpg" />
+    <Content Include="Thema\web\images\s2.jpg" />
+    <Content Include="Thema\web\images\s3.jpg" />
+    <Content Include="Thema\web\images\s4.jpg" />
+    <Content Include="Thema\web\images\s5.jpg" />
+    <Content Include="Thema\web\images\s6.jpg" />
+    <Content Include="Thema\web\images\s7.jpg" />
+    <Content Include="Thema\web\images\s8.jpg" />
+    <Content Include="Thema\web\images\s9.jpg" />
+    <Content Include="Thema\web\images\search.png" />
+    <Content Include="Thema\web\images\sh1.jpg" />
+    <Content Include="Thema\web\images\sh2.jpg" />
+    <Content Include="Thema\web\images\sh3.jpg" />
+    <Content Include="Thema\web\images\sh4.jpg" />
+    <Content Include="Thema\web\images\sh5.jpg" />
+    <Content Include="Thema\web\images\sh6.jpg" />
+    <Content Include="Thema\web\images\slider_handle.png" />
+    <Content Include="Thema\web\images\tick.png" />
+    <Content Include="Thema\web\images\tick1.png" />
+    <Content Include="Thema\web\images\tw.png" />
+    <Content Include="Thema\web\images\w1.jpg" />
+    <Content Include="Thema\web\images\w10.jpg" />
+    <Content Include="Thema\web\images\w11.jpg" />
+    <Content Include="Thema\web\images\w12.jpg" />
+    <Content Include="Thema\web\images\w2.jpg" />
+    <Content Include="Thema\web\images\w3.jpg" />
+    <Content Include="Thema\web\images\w4.jpg" />
+    <Content Include="Thema\web\images\w5.jpg" />
+    <Content Include="Thema\web\images\w6.jpg" />
+    <Content Include="Thema\web\images\w7.jpg" />
+    <Content Include="Thema\web\images\w8.jpg" />
+    <Content Include="Thema\web\images\w9.jpg" />
+    <Content Include="Thema\web\images\wh2.jpg" />
+    <Content Include="Thema\web\images\wh3.jpg" />
+    <Content Include="Thema\web\images\wh4.jpg" />
+    <Content Include="Thema\web\images\wh5.jpg" />
+    <Content Include="Thema\web\images\wh6.jpg" />
+    <Content Include="Thema\web\js\amcharts.js" />
+    <Content Include="Thema\web\js\bootstrap.min.js" />
+    <Content Include="Thema\web\js\cbpFWTabs.js" />
+    <Content Include="Thema\web\js\Chart.js" />
+    <Content Include="Thema\web\js\clndr.js" />
+    <Content Include="Thema\web\js\imagezoom.js" />
+    <Content Include="Thema\web\js\jquery-1.10.2.min.js" />
+    <Content Include="Thema\web\js\jquery.flexslider.js" />
+    <Content Include="Thema\web\js\jquery.flot.js" />
+    <Content Include="Thema\web\js\jquery.fn.gantt.js" />
+    <Content Include="Thema\web\js\jquery.nicescroll.js" />
+    <Content Include="Thema\web\js\light.js" />
+    <Content Include="Thema\web\js\menu_jquery.js" />
+    <Content Include="Thema\web\js\moment-2.2.1.js" />
+    <Content Include="Thema\web\js\owl.carousel.js" />
+    <Content Include="Thema\web\js\pie-chart.js" />
+    <Content Include="Thema\web\js\scripts.js" />
+    <Content Include="Thema\web\js\serial.js" />
+    <Content Include="Thema\web\js\simpleCart.min.js" />
+    <Content Include="Thema\web\js\site.js" />
+    <Content Include="Thema\web\js\underscore-min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Thema\web\fonts\fontawesome-webfont.eot" />
+    <Content Include="Thema\web\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Thema\web\fonts\fontawesome-webfont.woff" />
+    <Content Include="Thema\web\fonts\FontAwesome.otf" />
+    <Content Include="Thema\web\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Thema\web\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Thema\web\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Thema\web\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Thema\web\images\.DS_Store" />
+    <Content Include="Thema\web\maps\africa.json" />
+    <Content Include="Thema\web\maps\america.json" />
+    <Content Include="Thema\web\maps\asia.json" />
+    <Content Include="Thema\web\maps\europe.json" />
+    <Content Include="Thema\web\maps\mideast.json" />
+    <Content Include="Thema\web\maps\risk.json" />
+    <Content Include="Thema\web\maps\usofa.json" />
+    <Content Include="Views\Shared\_SideLayout.cshtml" />
+    <Content Include="Views\Home\List.cshtml" />
+    <Content Include="Views\Home\ActiveCall.cshtml" />
+    <Content Include="Views\Home\PassiveCall.cshtml" />
+    <Content Include="Views\Home\AddCall.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\Update.cshtml" />
+    <Content Include="Thema\login-form-08\.DS_Store" />
+    <Content Include="Thema\login-form-08\css\.DS_Store" />
+    <Content Include="Thema\login-form-08\css\bootstrap.min.css.map" />
+    <Content Include="Thema\login-form-08\fonts\.DS_Store" />
+    <Content Include="Thema\login-form-08\fonts\icomoon\fonts\icomoon.eot" />
+    <Content Include="Thema\login-form-08\fonts\icomoon\fonts\icomoon.ttf" />
+    <Content Include="Thema\login-form-08\fonts\icomoon\fonts\icomoon.woff" />
+    <Content Include="Thema\login-form-08\fonts\icomoon\selection.json" />
+    <Content Include="Thema\login-form-08\images\.DS_Store" />
+    <Content Include="Thema\login-form-08\scss\.DS_Store" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\bootstrap.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_deprecate.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\utilities\_overflow.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\utilities\_shadows.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\utilities\_stretched-link.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\vendor\_rfs.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_alert.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_badge.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_button-group.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_buttons.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_card.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_carousel.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_close.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_code.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_dropdown.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_forms.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_functions.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_grid.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_images.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_input-group.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_list-group.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_media.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_mixins.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_modal.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_nav.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_navbar.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_pagination.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_popover.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_print.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_progress.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_reboot.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_root.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_spinners.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_tables.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_toasts.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_tooltip.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_transitions.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_type.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_utilities.scss" />
+    <Content Include="Thema\login-form-08\scss\bootstrap\_variables.scss" />
+    <Content Include="Thema\login-form-08\scss\style.scss" />
+    <Content Include="Views\Login\Log.cshtml" />
+    <Content Include="Views\Login\ErrorPage.cshtml" />
+    <Content Include="Thema\web1\images\Thumbs.db" />
+    <Content Include="Views\Home\UpdateCompany.cshtml" />
+    <Content Include="Views\Login\RememberPassword.cshtml" />
+    <Content Include="Thema\web2\starter\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Thema\web2\starter\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Thema\web2\starter\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Thema\web2\starter\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Thema\web2\starter\assets\fonts\FontAwesome.otf" />
+    <Content Include="Views\Dashboard\List.cshtml" />
+    <Content Include="Views\Message\Message.cshtml" />
+    <Content Include="Views\Message\SenderList.cshtml" />
+    <Content Include="Views\Message\Notification.cshtml" />
+    <Content Include="Thema\summernote\font\summernote.eot" />
+    <Content Include="Thema\summernote\font\summernote.ttf" />
+    <Content Include="Thema\summernote\font\summernote.woff" />
+    <Content Include="Thema\summernote\font\summernote.woff2" />
+    <Content Include="Thema\summernote\summernote-bs4.js.map" />
+    <Content Include="Thema\summernote\summernote-bs4.min.js.map" />
+    <Content Include="Thema\summernote\summernote-lite.js.map" />
+    <Content Include="Thema\summernote\summernote-lite.min.js.map" />
+    <Content Include="Thema\summernote\summernote.js.map" />
+    <Content Include="Thema\summernote\summernote.min.js.map" />
+    <Content Include="Views\Message\InComingMessage.cshtml" />
+    <Content Include="Views\Dashboard\GoogleActiveChart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61301</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44331/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

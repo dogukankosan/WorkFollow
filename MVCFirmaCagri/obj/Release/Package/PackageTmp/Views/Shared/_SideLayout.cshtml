@@ -1,0 +1,99 @@
+﻿@using MVCFirmaCagri.ImageBinary
+@using MVCFirmaCagri.Models.Entitiy
+@{
+    Layout = null;
+    MVCFirmaCagri.Models.Entitiy.DbWorkFollowEntities db = new DbWorkFollowEntities();
+    short adminid=(short) Session["id"];
+    short viewadmincount=(short)db.Message.Count(x => x.IsRead == false && x.Status == true && x.Receiver ==adminid );
+    short passivecount =(short)db.CompanyCall.Count(x => x.Status == false && x.Company.ID == adminid);
+    short activecount =(short)db.CompanyCall.Count(x => x.Status == true && x.Company.ID == adminid);
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        ::selection {
+            background: orangered;
+            color: #FFF;
+        }
+    </style>
+    <title>MVC FİRMA ÇAĞRI</title>
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="C# PROGRAMLAMA DİLİ İLE ENTİTİY FRAMEWORK YAKLAŞIMI İLE SQL SERVER VERİTABANI VE DEVEXPRESS KULLANARAK GELİŞTİRİLEN İŞ TAKİP PROJESİ" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/Thema/web/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <link href="~/Thema/web/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="~/Thema/web/css/font-awesome.css" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css' />
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/Thema/web/css/icon-font.min.css" type='text/css' />
+    <script src="~/Thema/web/js/serial.js"></script>
+    <script src="~/Thema/web/js/light.js"></script>
+    <script src="~/Thema/web/js/jquery-1.10.2.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <div class="page-container">
+        <div class="left-content">
+            <div class="inner-content">
+                <div class="header-section">
+                    <div class="top_bg">
+                        <div class="header_top">
+                            <div class="top_left">
+                                <a href="tel:+905442895650"><h2><span></span> Bize Ulaşın :+90 544 289 5650</h2></a>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="content">
+                    <div class="women_main">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar-menu">
+            <header class="logo1">
+                <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a>
+            </header>
+            <div style="border-top: 1px ridge rgba(255, 255, 255, 0.15)"></div>
+            <div class="menu">
+                <ul id="menu">
+                    <li><a href="~/Home/List"><i class="fa fa-home"></i> <span>Ana Sayfa</span></a></li>
+                    <li id="menu-academico"><a href="~/Home/AddCall"><i class="fa fa-phone"></i> <span>Yeni Çağrı</span></a></li>
+                    <li id="menu-academico"><a href="~/Home/ActiveCall"><i class="fa fa-check-circle"></i> <span>Aktif Çağrılar</span><span style="background-color: green;margin-left: 50px" class="badge-completed">@activecount</span></a></li>
+                    <li><a href="~/Home/PassiveCall"><i class="fa fa-unlock"></i> <span>Pasif Çağrılar</span><span style="background-color: green;margin-left: 50px" class="badge-completed">@passivecount</span></a></li>
+                    <li><a href="~/Message/SenderList"><i class="fa fa-bookmark"></i> <span>Adminle Mesajlar</span><span style="background-color: green;margin-left: 28px" class="badge-completed">@viewadmincount</span></a></li>
+                    <li id="menu-academico"><a href="~/Home/UpdateCompany"><i class="fa fa-pencil-square"></i> <span>Profilimi Düzenle</span></a></li>
+                    <li id="menu-academico"><a href="~/Dashboard/List"><i class="fa fa-dashboard"></i> <span>DashBoard</span></a></li>
+                    <li id="menu-academico"><a href="~/Login/Exit"><i class="fa fa-dedent"></i> <span>Çıkış Yap</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        var toggle = true;
+        $(".sidebar-icon").click(function () {
+            if (toggle) {
+                $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+                $("#menu span").css({ "position": "absolute" });
+            }
+            else {
+                $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+                setTimeout(function () {
+                    $("#menu span").css({ "position": "relative" });
+                }, 400);
+            }
+            toggle = !toggle;
+        });
+    </script>
+    <script src="~/Thema/web/js/jquery.nicescroll.js"></script>
+    <script src="~/Thema/web/js/scripts.js"></script>
+    <script src="~/Thema/web/js/bootstrap.min.js"></script>
+    <script src="~/Thema/web/js/menu_jquery.js"></script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbWorkFollowModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CallDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyCall" Type="smallint" />
+    <Property Name="DescText" Type="varchar(max)" />
+    <Property Name="_Date" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CompanyOfficial" Type="varchar" MaxLength="30" />
+    <Property Name="CompanyTel" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="CompanyMail" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CompanyActivity" Type="varchar" MaxLength="30" />
+    <Property Name="CompanyCity" Type="tinyint" />
+    <Property Name="CompanyTown" Type="smallint" />
+    <Property Name="CompanyAdress" Type="varchar" MaxLength="120" />
+    <Property Name="CompanyImage" Type="varbinary(max)" />
+    <Property Name="IsAdmin" Type="bit" />
+  </EntityType>
+  <EntityType Name="CompanyCall">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="smallint" Nullable="false" />
+    <Property Name="Subject" Type="varchar" MaxLength="200" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="_Date" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Ilceler">
+    <Key>
+      <PropertyRef Name="IlceID" />
+    </Key>
+    <Property Name="IlceID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IlID" Type="tinyint" />
+    <Property Name="Ilce" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Iller">
+    <Key>
+      <PropertyRef Name="IlID" />
+    </Key>
+    <Property Name="IlID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Il" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sender" Type="smallint" />
+    <Property Name="Receiver" Type="smallint" Nullable="false" />
+    <Property Name="MessageContent" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="_Date" Type="smalldatetime" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="IsRead" Type="bit" />
+  </EntityType>
+  <EntityType Name="Personeles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonelName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PersonelSurname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PersonelMail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PersonelPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersonelTel" Type="char" MaxLength="11" />
+    <Property Name="PersonelPicture" Type="varbinary(max)" />
+    <Property Name="DepartmentID" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TaskDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TaskID" Type="int" Nullable="false" />
+    <Property Name="TaskDetailDesc" Type="varchar" MaxLength="500" />
+    <Property Name="TaskDate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="Taskes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TaskSender" Type="smallint" Nullable="false" />
+    <Property Name="TaskReceiver" Type="smallint" Nullable="false" />
+    <Property Name="TaskDesc" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="TaskDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Ilceler__IlID__6A30C649">
+    <End Role="Iller" Type="Self.Iller" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Ilceler" Type="Self.Ilceler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Iller">
+        <PropertyRef Name="IlID" />
+      </Principal>
+      <Dependent Role="Ilceler">
+        <PropertyRef Name="IlID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CallDetails_CompanyCall">
+    <End Role="CompanyCall" Type="Self.CompanyCall" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CallDetails" Type="Self.CallDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyCall">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CallDetails">
+        <PropertyRef Name="CompanyCall" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyCall_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CompanyCall" Type="Self.CompanyCall" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CompanyCall">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Message" Type="Self.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="Receiver" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_Company1">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="Message" Type="Self.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="Sender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personeles_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Personeles" Type="Self.Personeles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Personeles">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskDetails_Taskes">
+    <End Role="Taskes" Type="Self.Taskes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TaskDetails" Type="Self.TaskDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Taskes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TaskDetails">
+        <PropertyRef Name="TaskID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Taskes_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Taskes" Type="Self.Taskes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Taskes">
+        <PropertyRef Name="TaskSender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Taskes_Personeles">
+    <End Role="Personeles" Type="Self.Personeles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Taskes" Type="Self.Taskes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personeles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Taskes">
+        <PropertyRef Name="TaskReceiver" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbWorkFollowModelStoreContainer">
+    <EntitySet Name="CallDetails" EntityType="Self.CallDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyCall" EntityType="Self.CompanyCall" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ilceler" EntityType="Self.Ilceler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Iller" EntityType="Self.Iller" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personeles" EntityType="Self.Personeles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaskDetails" EntityType="Self.TaskDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Taskes" EntityType="Self.Taskes" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Ilceler__IlID__6A30C649" Association="Self.FK__Ilceler__IlID__6A30C649">
+      <End Role="Iller" EntitySet="Iller" />
+      <End Role="Ilceler" EntitySet="Ilceler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CallDetails_CompanyCall" Association="Self.FK_CallDetails_CompanyCall">
+      <End Role="CompanyCall" EntitySet="CompanyCall" />
+      <End Role="CallDetails" EntitySet="CallDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyCall_Company" Association="Self.FK_CompanyCall_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="CompanyCall" EntitySet="CompanyCall" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_Company" Association="Self.FK_Message_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Message" EntitySet="Message" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_Company1" Association="Self.FK_Message_Company1">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Message" EntitySet="Message" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personeles_Department" Association="Self.FK_Personeles_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Personeles" EntitySet="Personeles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskDetails_Taskes" Association="Self.FK_TaskDetails_Taskes">
+      <End Role="Taskes" EntitySet="Taskes" />
+      <End Role="TaskDetails" EntitySet="TaskDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Taskes_Company" Association="Self.FK_Taskes_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Taskes" EntitySet="Taskes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Taskes_Personeles" Association="Self.FK_Taskes_Personeles">
+      <End Role="Personeles" EntitySet="Personeles" />
+      <End Role="Taskes" EntitySet="Taskes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

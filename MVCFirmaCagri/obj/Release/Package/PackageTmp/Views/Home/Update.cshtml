@@ -1,0 +1,23 @@
+﻿@model MVCFirmaCagri.Models.Entitiy.CompanyCall
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_SideLayout.cshtml";
+}
+<h2 class="text-danger">ÇAĞRI GÜNCELLEME İŞLEMİ</h2>
+<hr />
+@using (Html.BeginForm("Update", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Status)
+    @Html.HiddenFor(x => x.ID)
+    @Html.HiddenFor(x => x.C_Date)
+    @Html.ValidationMessageFor(x => x.CompanyID, "", new { @class = "text-danger" })
+    <label>Konu:</label>
+    @Html.TextBoxFor(x => x.Subject, new { @maxlength = 200, @required = "", @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Subject, "", new { @class = "text-danger" })
+    <br />
+    <label>Açıklama:</label>
+    @Html.TextAreaFor(x => x.Description, new { @required = "", @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+    <br />
+    <button type="submit" class="btn btn-success">ÇAĞRIYI GÜNCELLE</button>
+}

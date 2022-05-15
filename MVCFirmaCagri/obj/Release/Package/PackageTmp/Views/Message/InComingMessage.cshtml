@@ -1,0 +1,43 @@
+﻿@model List<MVCFirmaCagri.Models.Entitiy.Message>
+@{
+    if (!(Model is null))
+    {
+        foreach (var item in Model)
+        {
+            if (item.Sender == ViewBag.adminid && item.Receiver == ViewBag.id)
+            {
+                <div class="incoming_msg">
+                    <div class="incoming_msg_img">
+                        <img src="@MVCFirmaCagri.ImageBinary.BinaryImage.ToBase64ImageString(item.Company1.CompanyImage)" alt="Admin"
+                             class="img-fluid">
+                    </div>
+                    <div class="received_msg">
+                        <div class="received_withd_msg">
+                            <p>
+                                @Html.Raw(item.MessageContent)
+                            </p>
+                            <span style="color: #ffffff" class="time_date">@item.C_Date.Value.ToString("f")</span>
+                        </div>
+                    </div>
+                </div>
+            }
+            if (item.Sender == ViewBag.id && item.Receiver == ViewBag.adminid)
+            {
+                <div class="outgoing_msg">
+                    <div class="sent_msg">
+                        @{
+
+                            string deger = item.IsRead == true ? "✓✓" : "✓";
+                            string clasInfo = deger == "✓✓" ? "aquamarine" : "white";
+                        }
+                        <p>
+                            @Html.Raw(item.MessageContent)
+                        </p>
+                        <p style="color:@clasInfo">@deger</p>
+                        <span style="color: aliceblue" class="time_date">@item.C_Date.Value.ToString("f")</span>
+                    </div>
+                </div>
+            }
+        }
+    }
+}

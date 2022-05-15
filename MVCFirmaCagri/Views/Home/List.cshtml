@@ -1,0 +1,18 @@
+﻿@using MVCFirmaCagri.ImageBinary
+@model MVCFirmaCagri.Models.Entitiy.Company
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_SideLayout.cshtml";
+}
+<h1 class="text-danger">HOŞGELDİNİZ</h1>
+<h2 class="text-dark">@Model.CompanyName</h2>
+<hr />
+<img  height="150" width="450" src="@BinaryImage.ToBase64ImageString(@Model.CompanyImage)" />
+@if (ViewBag.dgr == "addcomp")
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            swal("Başarılı!", "Firma Güncelleme İşlemi Başarılı", "success");
+        };
+    </script>
+}

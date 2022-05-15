@@ -1,0 +1,48 @@
+﻿@model MVCFirmaCagri.Models.Entitiy.Company
+@{
+    ViewBag.Title = "UpdateCompany";
+    Layout = "~/Views/Shared/_SideLayout.cshtml";
+}
+<h2 class="text-danger">ŞİRKET BİLGİLERİMİ DÜZENLE</h2>
+<hr />
+@using (Html.BeginForm("UpdateCompany", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{@Html.HiddenFor(x => x.CompanyCity)
+@Html.HiddenFor(x => x.CompanyTown)
+@Html.HiddenFor(x => x.ID)
+<label style="color: red">Firma Adı:</label>
+@Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control", @required = "", @maxlength = 100 })
+@Html.ValidationMessageFor(x => x.CompanyName, "", new { @class = "text-danger" })
+<br />
+<label>Firma Yetkili:</label>
+@Html.TextBoxFor(x => x.CompanyOfficial, new { @class = "form-control", @maxlength = 30 })
+<br />
+<label style="color: red">Firma Tel:</label>
+@Html.TextBoxFor(x => x.CompanyTel, new { @type = "tel", @placeholder = "123-4567890", pattern = "[0-9]{3}-[0-9]{3}[0-9]{4}", @class = "form-control", @required = "", @maxlength = 11 })
+@Html.ValidationMessageFor(x => x.CompanyTel, "", new { @class = "text-danger" })
+<br />
+<label style="color: red">Firma Mail:</label>
+@Html.TextBoxFor(x => x.CompanyMail, new { @placeholder = "example@.com", @class = "form-control", type = "email", @required = "", @maxlength = 70 })
+@Html.ValidationMessageFor(x => x.CompanyMail, "", new { @class = "text-danger" })
+<br />
+<label style="color: red">Firma Şifre:</label>
+@Html.TextBoxFor(x => x.Password, new { @class = "form-control", type = "password", @required = "", @maxlength = 25 })
+@Html.ValidationMessageFor(x => x.Password, "", new { @class = "text-danger" })
+<br />
+<label>Firma Faaliyet:</label>
+@Html.TextBoxFor(x => x.CompanyActivity, new { @class = "form-control", @maxlength = 30 })
+<br />
+<label>Firma Adres:</label>
+@Html.TextAreaFor(x => x.CompanyAdress, new { @class = "form-control", @maxlength = 120 })
+<br />
+<input type="file" accept="image/png, image/jpeg" name="logo" />
+<br />
+<button type="submit" class="btn btn-success">FİRMA GÜNCELLE</button>
+}
+@if (ViewBag.mukker == "mukker")
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            swal("Hatalı!", "GÜNCELLENECEK E-MAIL ADRESİ DAHA ÖNCEDEN TANIMLANMIŞ !!", "error");
+        };
+    </script>
+}

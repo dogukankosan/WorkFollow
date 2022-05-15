@@ -1,0 +1,241 @@
+﻿@using MVCFirmaCagri.Models.Entitiy
+@model MVCFirmaCagri.Models.Entitiy.Company
+@{
+    ViewBag.Title = "List";
+    Layout = null;
+    MVCFirmaCagri.Models.Entitiy.DbWorkFollowEntities db = new DbWorkFollowEntities();
+    Company degeradmin = db.Company.FirstOrDefault(x => x.CompanyActivity == "ADMİN YÖNETİCİ");
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        ::selection {
+            background: orangered;
+            color: #FFF;
+        }
+    </style>
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>DASHBOARD</title>
+    <link rel="stylesheet" href="~/Thema/web2/starter/assets/css/style-starter.css">
+    <link href="//fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap" rel="stylesheet">
+</head>
+<body class="sidebar-menu-collapsed">
+    <div class="se-pre-con"></div>
+    <section>
+        <div class="header sticky-header">
+            <div class="menu-right">
+                <div class="navbar user-panel-top">
+                    <div class="user-dropdown-details d-flex">
+                        <div class="profile_details_left">
+                            <ul class="nofitications-dropdown">
+                                @Html.Action("Notification", "Message")
+                                @Html.Action("Message", "Message")
+                            </ul>
+                        </div>
+                        <div class="profile_details">
+                            <ul>
+                                <li class="dropdown profile_details_drop">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu3" aria-haspopup="true"
+                                       aria-expanded="false">
+                                        <div class="profile_img">
+                                            <img src="@MVCFirmaCagri.ImageBinary.BinaryImage.ToBase64ImageString(Model.CompanyImage)" class="rounded-circle" alt="" />
+                                            <div class="user-active">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <ul class="dropdown-menu drp-mnu" aria-labelledby="dropdownMenu3">
+                                        <li class="user-info">
+                                            <h5 class="user-name">@Model.CompanyName</h5>
+                                        </li>
+                                        <li> <a href="~/Home/List"><i class="lnr lnr-home"></i>Ana Sayfa</a> </li>
+                                        <li> <a href="~/Home/AddCall"><i class="lnr lnr-plus-circle"></i>Yeni Çağrı Ekle</a> </li>
+                                        <li> <a href="~/Home/ActiveCall"><i class="lnr lnr-alarm"></i>Aktif Çağrılar</a> </li>
+                                        <li> <a href="~/Home/PassiveCall"><i class="lnr lnr-trash"></i>Pasif Çağrılar</a> </li>
+                                        <li><a href="~/Message/SenderList"><i class="fa fa-bookmark"></i> <span>Adminle Mesajlar</span></a></li>
+                                        <li> <a href="~/Home/UpdateCompany"><i class="lnr lnr-user"></i>Profilimi Düzenle</a> </li>
+                                        <li class="logout"> <a href="~/Login/Exit"><i class="fa fa-power-off"></i> Çıkış Yap</a> </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="container-fluid content-top-gap">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb my-breadcrumb">
+                        <li class="breadcrumb-item"><a href="~/Home/List">Panel</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                    </ol>
+                </nav>
+                <div class="welcome-msg pt-3 pb-4">
+                    <h1>Merhaba <span class="text-primary">@Model.CompanyName</span>, Hoşgeldiniz. </h1>
+                </div>
+                <div class="statistics">
+                    <div class="row">
+                        <div class="col-xl-6 pr-xl-2">
+                            <div class="row">
+                                <div class="col-sm-6 pr-sm-2 statistics-grid">
+                                    <div class="card card_border border-primary-top p-4">
+                                        <i class="lnr lnr-pie-chart"> </i>
+                                        <h3 class="text-primary number">@ViewBag.total</h3>
+                                        <p class="stat-text">Toplam Çağrı</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 pl-sm-2 statistics-grid">
+                                    <div class="card card_border border-primary-top p-4">
+                                        <i class="lnr lnr-diamond"> </i>
+                                        <h3 class="text-secondary number">@ViewBag.active</h3>
+                                        <p class="stat-text">Aktif Çağrı</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 pl-xl-2">
+                            <div class="row">
+                                <div class="col-sm-6 pr-sm-2 statistics-grid">
+                                    <div class="card card_border border-primary-top p-4">
+                                        <i class="lnr lnr-trash"> </i>
+                                        <h3 class="text-success number">@ViewBag.passive</h3>
+                                        <p class="stat-text">Pasif Çağrı</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 pl-sm-2 statistics-grid">
+                                    <div class="card card_border border-primary-top p-4">
+                                        <i class="lnr lnr-cart"> </i>
+                                        <h3 class="text-danger number">@Model.CompanyActivity</h3>
+                                        <p class="stat-text">Sektör</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart">
+                    <div class="row">
+                        <div class="col-lg-6 pr-lg-2 chart-grid">
+                            <div class="card text-center card_border">
+                                @Html.Action("GoogleActiveChart","Dashboard")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordions">
+                    <div class="row">
+                        <div class="col-lg-12 mb-4">
+                            <div class="card card_border">
+                                <div class="card-header chart-grid__header">
+                                    Akordiyon Menü
+                                </div>
+                                <div class="card-body">
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="card">
+                                            <div class="card-header bg-white p-0" id="headingOne">
+                                                <a href="#" class="card__title p-3" data-toggle="collapse" data-target="#collapseOne"
+                                                   aria-expanded="true" aria-controls="collapseOne">Çağrı Problemleri </a>
+                                            </div>
+                                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                                 data-parent="#accordionExample">
+                                                <div class="card-body para__style">
+                                                    Çağrılarda bir sorun  yaşarsanız web sitemizin panel kısmında yer alan telefon numarası üzerinden bize ulaşabilirsiniz 
+                                                    ya da mesaj panelinden bize mesaj gönderek iletişime geçebilirsiniz. Hemen işlemlerinize çözüm sağlıyacaz.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header bg-white p-0" id="headingTwo">
+                                                <a href="#" class="card__title p-3" data-toggle="collapse" data-target="#collapseTwo"
+                                                   aria-expanded="false" aria-controls="collapseTwo">Mesajlar ve Bildirimler</a>
+                                            </div>
+                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                                <div class="card-body para__style">
+                                                    Size Admin tarafından gönderilmiş mesaj ve bildirimleri sağ üst taraftaki bildirim sekmesinden yönetebilir admin ile iletişim
+                                                    halinde kalarak iş birlikteliğinizi arttırabilirsiniz.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header bg-white p-0" id="headingThree">
+                                                <a href="#" class="card__title p-3" data-toggle="collapse" data-target="#collapseThree"
+                                                   aria-expanded="false" aria-controls="collapseThree">
+                                                    Yeni Çağrı İşlemleri
+                                                </a>
+                                            </div>
+                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                                 data-parent="#accordionExample">
+                                                <div class="card-body para__style">
+                                                    Web sayfamızın panel kısmına gidip çağrılar sekmesinin hemen altında bulunan yeni çağrı alanına tıklayıp
+                                                    sistemimizde yaşadığınız sorunları bize mesaj olarak iletmeniz halinde en kısa süre içinde size dönüş sağlıyacağız.Teknik
+                                                    çağrı ekibimiz sabah saat 08:00 ile akşam saat 22:00 arasında hizmet vermektedir.Bağlantı kurabilmek için bilgisayarınıza
+                                                    bir uzak bağlantı programı indirmeyi unutmayın.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="dashboard">
+        <p>
+            &copy @DateTime.Now.Year Collective. All Rights Reserved | Design by <a href="https://github.com/dogukankosan" target="_blank"class="text-primary">DOĞUKAN KOŞAN</a>
+        </p>
+    </footer>
+    <button onclick="topFunction()" id="movetop" class="bg-primary" title="Go to top">
+        <span class="fa fa-angle-up"></span>
+    </button>
+    <script>
+        window.onscroll = function () {
+            scrollFunction();
+        };
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }</script>
+    <script src="~/Thema/web2/starter/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Thema/web2/starter/assets/js/jquery-1.10.2.min.js"></script>
+    <script src="~/Thema/web2/starter/assets/js/scripts.js"></script>
+    <script src="~/Thema/web2/starter/assets/js/bootstrap.min.js"></script>
+    <script src="~/Thema/web2/starter/assets/js/Chart.min.js"></script>
+    <script src="~/Thema/web2/starter/assets/js/utils.js"></script>
+    <script src="~/Thema/web2/starter/assets/js/bar.js"></script>
+    <script src="~/Thema/web2/starter/assets/js/linechart.js"></script>
+    <script src="~/Thema/web2/starter/assets/js/jquery.nicescroll.js"></script>
+<script>
+        var closebtns = document.getElementsByClassName("close-grid");
+        var i;
+        for (i = 0; i < closebtns.length; i++) {
+            closebtns[i].addEventListener("click", function () {
+                this.parentElement.style.display = 'none';
+            });
+        }</script>
+    <script>
+        $(function () {
+            $('.sidebar-menu-collapsed').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });</script>
+    <script src="~/Thema/web2/starter/assets/js/modernizr.js"></script>
+    <script>
+        $(window).load(function () {
+            $(".se-pre-con").fadeOut("slow");;
+        });</script>
+</body>
+</html>

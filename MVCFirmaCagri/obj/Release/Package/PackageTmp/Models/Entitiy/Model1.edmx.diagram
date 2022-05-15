@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="02ece70663364c3dabd2549d3b30f96f" Name="Diagram1">
+        <EntityTypeShape EntityType="DbWorkFollowModel.CallDetails" Width="1.5" PointX="9.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbWorkFollowModel.Company" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbWorkFollowModel.CompanyCall" Width="1.5" PointX="7.5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbWorkFollowModel.Department" Width="1.5" PointX="2.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbWorkFollowModel.Ilceler" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbWorkFollowModel.Iller" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbWorkFollowModel.Message" Width="1.5" PointX="7.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbWorkFollowModel.Personeles" Width="1.5" PointX="5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbWorkFollowModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbWorkFollowModel.TaskDetails" Width="1.5" PointX="9.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbWorkFollowModel.Taskes" Width="1.5" PointX="7.25" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="DbWorkFollowModel.FK_CallDetails_CompanyCall" ManuallyRouted="false" />
+        <AssociationConnector Association="DbWorkFollowModel.FK_Company_Ilceler" ManuallyRouted="false" />
+        <AssociationConnector Association="DbWorkFollowModel.FK_Company_Iller" ManuallyRouted="false" />
+        <AssociationConnector Association="DbWorkFollowModel.FK_CompanyCall_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="DbWorkFollowModel.FK_Message_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="DbWorkFollowModel.FK_Message_Company1" ManuallyRouted="false" />
+        <AssociationConnector Association="DbWorkFollowModel.FK_Personeles_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="DbWorkFollowModel.FK__Ilceler__IlID__6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="DbWorkFollowModel.FK_Taskes_Personeles" ManuallyRouted="false" />
+        <AssociationConnector Association="DbWorkFollowModel.FK_Taskes_Personeles1" ManuallyRouted="false" />
+        <AssociationConnector Association="DbWorkFollowModel.FK_TaskDetails_Taskes" ManuallyRouted="false" />
+        <AssociationConnector Association="DbWorkFollowModel.FK_Taskes_CompanyCall" />
+        <AssociationConnector Association="DbWorkFollowModel.FK_Taskes_Company" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,29 @@
+﻿@model List<MVCFirmaCagri.Models.Entitiy.CompanyCall>
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <i class="fa fa-bell-o"></i><span class="badge blue">@Model.Count</span>
+    </a>
+    <ul class="dropdown-menu">
+        <li>
+            <div class="notification_header">
+                <h3>@Model.Count Aktif Çağrınız Bulunmaktadır</h3>
+            </div>
+        </li>
+        @foreach (var item in Model)
+        {
+<li class="odd">
+    <a href="~/Home/Details/@item.ID" class="grid">
+        <div class="user_img"><img src="https://w1.pngwing.com/pngs/558/600/png-transparent-email-button-telephone-call-mobile-phones-dialling-circle-line-symbol-logo.png" alt=""></div>
+        <div class="notification_desc">
+            <p>@item.Subject</p>
+            <span>@item.C_Date.ToString("f")</span>
+        </div>
+    </a>
+</li>}
+        <li>
+            <div class="notification_bottom">
+                <a href="~/Home/ActiveCall" class="bg-primary">Tüm Aktif Çağrılar</a>
+            </div>
+        </li>
+    </ul>
+</li>

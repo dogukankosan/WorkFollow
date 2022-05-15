@@ -1,0 +1,23 @@
+﻿@model MVCFirmaCagri.Models.Entitiy.CompanyCall
+@{
+    ViewBag.Title = "AddCall";
+    Layout = "~/Views/Shared/_SideLayout.cshtml";
+}
+<h2 class="text-danger">YENİ ÇAĞRI EKLEME İŞLEMİ</h2>
+<hr />
+@using (Html.BeginForm("AddCall", "Home", FormMethod.Post))
+{@Html.ValidationMessageFor(x => x.CompanyID, "", new { @class = "text-danger" })
+<label>Konu:</label>
+@Html.TextBoxFor(x => x.Subject, new { @maxlength = 200, @required = "", @class = "form-control" })
+@Html.ValidationMessageFor(x => x.Subject, "", new { @class = "text-danger" })
+<br />
+<label>Açıklama:</label>
+@Html.TextAreaFor(x => x.Description, new { @required = "", @class = "form-control" })
+@Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+<br />
+<label>Tarih:</label>
+<input type="datetime-local" class="form-control" required="" id="C_Date" name="C_Date" />
+@Html.ValidationMessageFor(x => x.C_Date, "", new { @class = "text-danger" })
+<br />
+<button type="submit" class="btn btn-success">ÇAĞRIYI KAYDET</button>
+}

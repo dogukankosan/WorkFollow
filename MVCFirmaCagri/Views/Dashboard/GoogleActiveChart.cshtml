@@ -1,0 +1,43 @@
+﻿<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            url: '@Url.Action("ActivePassiveResult", "Dashboard")',
+            success: function (result) {
+                google.charts.load('current', {
+                    'packages': ['corechart']
+                });
+                google.charts.setOnLoadCallback(function () {
+                    drawChart(result);
+                });
+            }
+        });
+    });
+    function drawChart(result) {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Status');
+        data.addColumn('number', 'Values');
+        var dataArray = [];
+        $.each(result, function (i, obj) {
+            dataArray.push([obj.Status, obj.Values]);
+        });
+        data.addRows(dataArray);
+        var columnChartOptions = {
+            title: "Aktif Pasif Çağrılar Oranı - Grağifi",
+            is3D:true,
+            width: 1400,
+            height: 500,
+            bar: { groupWidth: "50%" },
+        };
+        var columnChart = new google.visualization.PieChart(document
+            .getElementById('Piechart_div'));
+        columnChart.draw(data, columnChartOptions);
+    }
+</script>
+<div id="Piechart_div"></div>
